@@ -28,6 +28,12 @@
 |:---:|:---:|
 |ViT-B/8|80.81%|
 
+### Analysis
+1. **Patch Size**: smaller patches (4×4) mean more tokens which results in better fine-grained learning but requires higher compute.
+   Larger patches (8×8) mean fewer tokens which implies faster training but loss of local detail.
+2. **Depth vs Width**: Increasing depth (number of Transformer blocks) improves feature abstraction and increasing width (embedding dimension) improves representation capacity.
+3. **Data Augmentation & Regularization**: Using CutMix, MixUp, and RandAugment will improve generalization.
+
 ## q2: Text-Driven Image Segmentation with SAM 2
 
 ### How to run in colab:
@@ -50,14 +56,8 @@
 
 ### Limitations
 - Bounding box detection accuracy depends heavily on text model quality.
-- Generic or ambiguous prompts (e.g. “object”) yield weak results.
-- Requires GPU for real-time inference.
-- Checkpoint URLs may change; check official repos if a link fails.
+- Generic prompts like "object", yield weak results.
+- Requires GPU for inference.
+- Checkpoint URLs may change.
 
-### Bonus
-To extend this to video segmentation:
-
-Extract mask for first frame.
-Propagate using optical flow or tracking.
-Refine each frame with SAM 2.
 
