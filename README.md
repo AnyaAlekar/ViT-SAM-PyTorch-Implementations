@@ -43,9 +43,13 @@
 4. Provide a text prompt and view the segmentation mask overlay.
 
 ### Pipeline
-1. Text Prompt → Region Seed: Use Grounding DINO (or CLIPSeg/GLIP) to find bounding boxes for the text prompt.
-2. Seed → Segmentation Mask: Feed bounding boxes to SAM 2 to produce a fine-grained mask.
-3. Visualization: Overlay the predicted mask on the input image.
+1. Install dependencies and model checkpoints for SAM 2 and Grounding DINO
+2. Upload an image (e.g. A street scene with a person next to a dog)
+3. Accept user text prompt (e.g. "a dog")
+1. Use Grounding DINO for text-to-box prediction. It finds bounding boxes for the text prompt.
+2. Rescale the normalised boxes from Grounding DINO as SAM 2 expects pixel corner boxes.
+3. Use SAM 2 for box-to-mask prediction. SAM 2 takes bounding boxes to produce a fine-grained mask using ViT based embeddings.
+4. Visualise the mask by overlaying the predicted mask on the input image.
 
 ### Checkpoints used
 |Model|File|Download Command|
