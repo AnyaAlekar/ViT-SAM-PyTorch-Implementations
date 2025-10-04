@@ -1,6 +1,6 @@
 # ViT-SAM-PyTorch-Implementations
 
-## q1: ViT on CIFAR10
+## q1: Vision Transformer on CIFAR-10 (PyTorch)
 ### How to run in Colab:
 1. Download q1.ipynb
 2. Enable GPU in Runtime -> Change runtime type
@@ -23,8 +23,12 @@
 |Batch size|256|
 |Scheduler|CosineAnnealingLR with warmup|
 
+### Results
+|Model|Test Accuracy|
+|:---:|:---:|
+|ViT-B/8|80.81%|
 
-## q2: SAM 2
+## q2: Text-Driven Image Segmentation with SAM 2
 
 ### How to run in colab:
 1. Run the first cell to install dependencies and download checkpoints.
@@ -49,3 +53,11 @@
 - Generic or ambiguous prompts (e.g. “object”) yield weak results.
 - Requires GPU for real-time inference.
 - Checkpoint URLs may change; check official repos if a link fails.
+
+### Bonus
+To extend this to video segmentation:
+
+Extract mask for first frame.
+Propagate using optical flow or tracking.
+Refine each frame with SAM 2.
+
