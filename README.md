@@ -25,7 +25,7 @@
 ### Results
 |Model|Test Accuracy|
 |:---:|:---:|
-|ViT-B/8|80.81%|
+|ViT-B/8|81.43%|
 
 ### Analysis
 1. **Patch Size**: smaller patches (4×4) mean more tokens which results in better fine-grained learning but requires higher compute.
