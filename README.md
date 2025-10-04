@@ -3,7 +3,7 @@
 ## q1: Vision Transformer on CIFAR-10 (PyTorch)
 ### How to run in Colab:
 1. Download q1.ipynb
-2. Enable GPU in Runtime -> Change runtime type
+2. Enable GPU in Runtime and change runtime type
 3. Run all cells sequentially
 
 ### Config for best model
@@ -21,7 +21,6 @@
 |Weight Decay|0.05|
 |Epochs|200|
 |Batch size|256|
-|Scheduler|CosineAnnealingLR with warmup|
 
 ### Results
 |Model|Test Accuracy|
@@ -38,7 +37,7 @@
 
 ### How to run in colab:
 1. Run the first cell to install dependencies and download checkpoints.
-2. Enable GPU in Runtime -> Change runtime type
+2. Enable GPU in Runtime and change runtime type
 3. Upload an image (sample.jpg) or use a Colab file path.
 4. Provide a text prompt and view the segmentation mask overlay.
 
